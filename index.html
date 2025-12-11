@@ -1,2 +1,314 @@
-Hola mundo desde mi curriculum
-Esta es una modificacion
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Currículum Daniel Calve Pardo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #000000;
+    --card: #26292e;
+    --accent: #00e0c2;
+    --muted: #a4a8ae;
+    --heading: #f4f7fa;
+    --gap: 24px;
+    --maxw: 980px;
+    --radius: 18px;
+    --shadow: 0 0 15px rgba(48, 39, 39, 0.35);
+    --print-margin: 20mm;
+  }
+
+  /* RESET */
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--heading);
+    font-family:"Inter", sans-serif;
+    padding:40px 16px;
+    display:flex;
+    justify-content:center;
+  }
+
+  /* CV WRAPPER */
+  .cv{
+    width:100%;
+    max-width:var(--maxw);
+    background:var(--card);
+    border-radius:var(--radius);
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:300px 1fr;
+    gap:var(--gap);
+    box-shadow:var(--shadow);
+    animation:fadeIn .5s ease;
+  }
+
+  @keyframes fadeIn {
+      from {opacity:0; transform:translateY(12px);}
+      to {opacity:1; transform:translateY(0);}
+  }
+
+  /* SIDEBAR */
+  .sidebar{
+    padding:28px;
+    background:#32343a;
+  }
+
+  .photo{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    overflow:hidden;
+    margin:0 auto 16px auto;
+    border:3px solid rgba(0,224,194,0.25);
+  }
+  .photo img{width:100%;height:100%;object-fit:cover}
+
+  .name h1{
+    text-align:center;
+    margin-bottom:6px;
+    font-size:22px;
+    font-weight:700;
+  }
+
+  .name p{
+    text-align:center;
+    font-size:15px;
+    color:var(--muted);
+  }
+
+  .contact, .skills, .languages{
+    margin-top:22px;
+  }
+
+  .line{
+    margin:6px 0;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.4
+  }
+
+  .contact strong{
+    color:var(--heading);
+  }
+
+  /* SKILLS */
+  .skill-bar{margin:14px 0}
+  .skill-track{
+    background:#2b2d31;
+    height:8px;
+    border-radius:999px;
+    overflow:hidden;
+  }
+  .skill-fill{
+    height:100%;
+    border-radius:999px;
+    background:var(--accent);
+  }
+  sup{
+    float:right;
+    color:var(--muted);
+    font-size:11px
+  }
+
+  .tag{
+    display:inline-block;
+    background:rgba(0,224,194,0.18);
+    padding:6px 12px;
+    font-size:13px;
+    border-radius:999px;
+    color:var(--accent);
+    margin:6px 6px 0 0;
+  }
+
+  /* MAIN AREA */
+  .main{
+    padding:32px;
+  }
+
+  .section{
+    margin-bottom:28px;
+  }
+
+  .section h2{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:18px;
+    color:var(--accent);
+    margin-bottom:12px;
+  }
+
+  .dot{
+    background:var(--accent);
+    width:8px;
+    height:8px;
+    border-radius:50%;
+  }
+
+  .summary p{
+    color:var(--muted);
+    line-height:1.6;
+    font-size:15px;
+  }
+
+  /* ITEMS */
+  .item{
+    border-bottom:1px solid #2b2d32;
+    padding:16px 0;
+  }
+  .item:last-child{
+    border-bottom:none;
+  }
+
+  .meta{
+    font-size:13px;
+    color:var(--muted);
+    margin-bottom:4px;
+  }
+
+  .item h3{
+    font-size:16px;
+    margin-bottom:6px;
+  }
+  .item p{
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.5;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width:850px){
+    .cv{
+      grid-template-columns:1fr;
+    }
+    .sidebar, .main{
+      padding:22px;
+    }
+    .photo{
+      width:120px;
+      height:120px;
+    }
+  }
+
+  @media (max-width:500px){
+    body{padding:20px 8px;}
+    .cv{border-radius:14px;}
+    .name h1{font-size:20px;}
+    .section h2{font-size:17px;}
+  }
+
+  /* PRINT */
+  @media print{
+    body{padding:0;background:white}
+    .cv{
+      background:white;
+      color:black;
+      max-width:210mm;
+      box-shadow:none;
+    }
+    .sidebar,.main{
+      background:white;
+      color:black;
+    }
+    *{color:black !important}
+    @page{margin:var(--print-margin)}
+  }
+</style>
+</head>
+
+<body>
+
+<div class="cv">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="photo"><img src="foto curriculum.jpeg" alt=""></div>
+
+    <div class="name">
+      <h1>Daniel Calve Pardo</h1>
+      <p>Estudiante DAW</p>
+    </div>
+
+    <div class="contact">
+      <div class="line"><strong>Email:</strong> danielcalvepardo@hotmail.com</div>
+      <div class="line"><strong>Tel:</strong> +34 696 321 225</div>
+      <div class="line"><strong>Ciudad:</strong> Valencia</div>
+    </div>
+
+    <div class="skills">
+      <h3 style="font-size:15px;color:var(--heading)">Habilidades</h3>
+
+      <div class="skill-bar">
+        <div>HTML / CSS <sup>80%</sup></div>
+        <div class="skill-track"><div class="skill-fill" style="width:80%"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div>JavaScript <sup>90%</sup></div>
+        <div class="skill-track"><div class="skill-fill" style="width:90%"></div></div>
+      </div>
+
+      <div class="skill-bar">
+        <div>Python <sup>70%</sup></div>
+        <div class="skill-track"><div class="skill-fill" style="width:70%"></div></div>
+      </div>
+    </div>
+
+    <div class="languages">
+      <h3 style="font-size:15px;color:var(--heading)">Idiomas</h3>
+      <span class="tag">Castellano</span>
+      <span class="tag">Valenciano</span>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <section class="section summary">
+      <h2><span class="dot"></span>Perfil</h2>
+      <p>Soy una persona dinámica, motivada por el aprendizaje continuo y el trabajo colaborativo. Me caracterizo por mi disposición para ayudar, resolver problemas y contribuir positivamente al equipo. Valoro el compromiso, la responsabilidad y la mejora constante.</p>
+    </section>
+
+    <section class="section">
+      <h2><span class="dot"></span>Formación</h2>
+
+      <div class="item">
+        <div class="meta">Colegio Oller 2 — 2019 - 2023</div>
+        <h3>Educación Secundaria Obligatoria</h3>
+        <p>Graduado en el año 2023.</p>
+      </div>
+
+      <div class="item">
+        <div class="meta">Centro FP Progresa — 2023 - 2025</div>
+        <h3>Grado Medio SMR</h3>
+        <p>Graduado en el año 2025.</p>
+      </div>
+
+      <div class="item">
+        <div class="meta">CEAC FP — Actualidad</div>
+        <h3>Grado Superior DAW</h3>
+        <p>Cursando actualmente Desarrollo de Aplicaciones Web.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2><span class="dot"></span>Experiencia Profesional</h2>
+
+      <div class="item">
+        <div class="meta">Avanza — 2025</div>
+        <h3>Prácticas Profesionales</h3>
+        <p>Asistencia en soporte y tareas básicas de programación.</p>
+        <p>380 horas de prácticas en la empresa "Avanza".</p>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>
